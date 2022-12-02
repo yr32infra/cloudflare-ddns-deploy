@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  cloudflareddns:
+    image: timothyjmiller/cloudflare-ddns:latest@sha256:ce7d96d3f1870e43a5da88084d1695846ff1acfa5e679c02c30347c5cf33fbb3
+    hostname: cloudflareddns
+    container_name: cloudflareddns__cloudflareddns
+    restart: unless-stopped
+
+    environment:
+      PUID: 1
+      PGID: 1
+
+    volumes:
+      - type: bind
+        source: ./config.json
+        target: /config.json
+
+    networks:
+      - default
+
+    deploy:
+      resources:
+        limits:
+          memory: 128m
+
+networks:
+  default:
+    name: cloudflareddns__default
