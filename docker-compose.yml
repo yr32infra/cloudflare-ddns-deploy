@@ -1,7 +1,7 @@
 version: '3.9'
 services:
   cloudflareddns:
-    image: timothyjmiller/cloudflare-ddns:latest@sha256:4f347f975c59eef1d993ba1e433ac56a0dfb80a44b5168214ca115fe50187eda
+    image: timothyjmiller/cloudflare-ddns:latest@sha256:ccaea560f06ea2e070109c625b6b037806dfea78422459f888d8db85840eeb35
     hostname: cloudflareddns
     container_name: cloudflareddns__cloudflareddns
     restart: unless-stopped
